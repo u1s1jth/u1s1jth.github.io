@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, JJJth">
+    <meta name="keywords" content="cloud com配置, JJJth">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | JJJth</title>
+    <title>cloud com配置 | JJJth</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -417,12 +417,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">cloud com配置</h1>
                 </div>
             </div>
         </div>
@@ -536,12 +536,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Typora/">
+                                <span class="chip bg-color">Typora</span>
+                            </a>
+                        
+                            <a href="/tags/Markdown/">
+                                <span class="chip bg-color">Markdown</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Markdown/" class="post-category">
+                                Markdown
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -550,7 +567,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-23
+                    2021-09-29
                 </div>
                 
 
@@ -571,19 +588,67 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <h1 id="一、基础服务"><a href="#一、基础服务" class="headerlink" title="一、基础服务"></a><strong>一、基础服务</strong></h1><h3 id="1-防火墙、selinux关闭服务且关闭自启动"><a href="#1-防火墙、selinux关闭服务且关闭自启动" class="headerlink" title="1.防火墙、selinux关闭服务且关闭自启动"></a><strong>1.防火墙、selinux关闭服务且关闭自启动</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld								####临时关闭防火墙</span><br><span class="line">systemctl disable firewalld								####永久关闭防火墙</span><br><span class="line">setenforce 0   											####临时关闭selinux</span><br><span class="line">sed -i &#x27;s@=enforcing@=disabled@&#x27; /etc/selinux/config  	####永久关闭selinux</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="2-时间同步"><a href="#2-时间同步" class="headerlink" title="2.时间同步"></a><strong>2.时间同步</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum –y install chrony</span><br><span class="line">vim /etc/chrony.conf						####控制节点、其他节点配置如下图所示</span><br><span class="line">systemctl restart chronyd</span><br><span class="line">systemctl enable chronyd</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h4 id="控制节点配置内容"><a href="#控制节点配置内容" class="headerlink" title="控制节点配置内容"></a><strong>控制节点配置内容</strong></h4><p><img src="C:\Users\10586\AppData\Roaming\Typora\typora-user-images\image-20210416095556051.png" alt="image-20210416095556051"></p>
+<hr>
+<h4 id="其他节点配置内容"><a href="#其他节点配置内容" class="headerlink" title="其他节点配置内容"></a><strong>其他节点配置内容</strong></h4><p><img src="C:\Users\10586\AppData\Roaming\Typora\typora-user-images\image-20210416095830344.png" alt="image-20210416095830344"></p>
+<hr>
+<h3 id="3-常用软件包安装"><a href="#3-常用软件包安装" class="headerlink" title="3.常用软件包安装"></a>3.常用软件包安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">yum –y install net-tools</span></span><br><span class="line"><span class="meta">#</span><span class="bash">yum –y install psmisc</span></span><br><span class="line"><span class="meta">#</span><span class="bash">yum -y install lrzsz</span></span><br><span class="line"><span class="meta">#</span><span class="bash">yum –y install vim wget</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="4-IP地址hosts文件映射、宿主机hosts文件映射、yum源创建（参照实验一）"><a href="#4-IP地址hosts文件映射、宿主机hosts文件映射、yum源创建（参照实验一）" class="headerlink" title="4.IP地址hosts文件映射、宿主机hosts文件映射、yum源创建（参照实验一）"></a>4.IP地址hosts文件映射、宿主机hosts文件映射、yum源创建（参照实验一）</h3><hr>
+<hr>
+<h1 id="二、nova服务（计算节点安装，控制节点安装略）"><a href="#二、nova服务（计算节点安装，控制节点安装略）" class="headerlink" title="二、nova服务（计算节点安装，控制节点安装略）"></a>二、nova服务（计算节点安装，控制节点安装略）</h1><h3 id="1-验证计算节点是否支持虚拟化（数字大于0表示CPU支持虚拟化）"><a href="#1-验证计算节点是否支持虚拟化（数字大于0表示CPU支持虚拟化）" class="headerlink" title="1.验证计算节点是否支持虚拟化（数字大于0表示CPU支持虚拟化）"></a>1.验证计算节点是否支持虚拟化（数字大于0表示CPU支持虚拟化）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep -c &#x27;(vmx|svm)&#x27; /proc/cpuinfo</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="2-安装nova包"><a href="#2-安装nova包" class="headerlink" title="2.安装nova包"></a>2.安装nova包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install openstack-nova-compute -y</span><br><span class="line">yum -y install openstack-utils					###提供自动化配置文件修改工具openstack-config</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3.修改配置文件"></a>3.修改配置文件</h3><h4 id="备份"><a href="#备份" class="headerlink" title="备份"></a><strong><u>备份</u></strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp -a /etc/nova/nova.conf&#123;,.bak&#125;</span><br><span class="line">grep -Ev &#x27;^$|#&#x27; /etc/nova/nova.conf.bak &gt; /etc/nova/nova.conf</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a><strong><u>修改</u></strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/nova/nova.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">[DEFAULT]</span><br><span class="line">my_ip = 192.168.136.32</span><br><span class="line">enabled_apis = osapi_compute,metadata</span><br><span class="line">transport_url = rabbit://openstack:RABBIT-PASS@jth36-controller:5672/</span><br><span class="line">use_neutron = true</span><br><span class="line">firewall_driver = nova.virt.firewall.NoopFirewallDriver</span><br><span class="line"></span><br><span class="line">[api]</span><br><span class="line">auth_strategy = keystone</span><br><span class="line"></span><br><span class="line">[glance]</span><br><span class="line">api_servers = http://jth36-controller:9292</span><br><span class="line"></span><br><span class="line">[keystone_authtoken]</span><br><span class="line">www_authenticate_uri = http://jth36-controller:5000/</span><br><span class="line">auth_url = http://jth36-controller:5000/</span><br><span class="line">memcached_servers = jth36-controller:11211</span><br><span class="line">auth_type = password</span><br><span class="line">project_domain_name = Default</span><br><span class="line">user_domain_name = Default</span><br><span class="line">project_name = service</span><br><span class="line">username = nova</span><br><span class="line">password = NOVA_PASS</span><br><span class="line"></span><br><span class="line">[libvirt]</span><br><span class="line">virt_type = qemu</span><br><span class="line"></span><br><span class="line">[oslo_concurrency]</span><br><span class="line">lock_path = /var/lib/nova/tmp</span><br><span class="line"></span><br><span class="line">[placement]</span><br><span class="line">region_name = RegionOne</span><br><span class="line">project_domain_name = Default</span><br><span class="line">project_name = service</span><br><span class="line">auth_type = password</span><br><span class="line">user_domain_name = Default</span><br><span class="line">auth_url = http://jth36-controller:5000/v3</span><br><span class="line">username = placement</span><br><span class="line">password = PLACEMENT_PASS</span><br><span class="line"></span><br><span class="line">[vnc]</span><br><span class="line">enabled = true</span><br><span class="line">server_listen = 0.0.0.0</span><br><span class="line">server_proxyclient_address = $my_ip</span><br><span class="line">novncproxy_base_url = http://jth36-controller:6080/vnc_auto.html</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-启动服务并设置开机自启动"><a href="#3-启动服务并设置开机自启动" class="headerlink" title="3.启动服务并设置开机自启动"></a>3.启动服务并设置开机自启动</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable libvirtd.service openstack-nova-compute.service</span><br><span class="line">systemctl start libvirtd.service openstack-nova-compute.service</span><br><span class="line"></span><br><span class="line">systemctl status libvirtd.service openstack-nova-compute.service</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-到-控制节点-注册计算节点"><a href="#4-到-控制节点-注册计算节点" class="headerlink" title="4.到    控制节点    注册计算节点"></a>4.到    <em><u>控制节点</u></em>    注册计算节点</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su -s /bin/sh -c &quot;nova-manage cell_v2 discover_hosts --verbose&quot; nova</span><br></pre></td></tr></table></figure>
+
+<p>如下图所示即为注册成功</p>
+<p><img src="C:\Users\10586\AppData\Roaming\Typora\typora-user-images\image-20210416104421513.png" alt="image-20210416104421513"></p>
+<hr>
+<h3 id="5-到-控制节点-查看、验证服务"><a href="#5-到-控制节点-查看、验证服务" class="headerlink" title="5.到    控制节点    查看、验证服务"></a>5.到    <em><u>控制节点</u></em>    查看、验证服务</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nova service-list</span><br><span class="line">openstack compute service list</span><br><span class="line">nova-manage cell_v2 list_hosts</span><br></pre></td></tr></table></figure>
+
+<p>如下图所示即为安装成功</p>
+<p><img src="C:\Users\10586\AppData\Roaming\Typora\typora-user-images\image-20210416104941435.png" alt="image-20210416104941435"></p>
+<hr>
+<hr>
+<h1 id="三、neutron服务（计算节点安装，控制节点安装略）"><a href="#三、neutron服务（计算节点安装，控制节点安装略）" class="headerlink" title="三、neutron服务（计算节点安装，控制节点安装略）"></a>三、neutron服务（计算节点安装，控制节点安装略）</h1><h3 id="1-安装neutron包"><a href="#1-安装neutron包" class="headerlink" title="1.安装neutron包"></a>1.安装neutron包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa |grep openstack-selinux</span><br><span class="line">rpm -qa |grep openstackclient</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\10586\AppData\Roaming\Typora\typora-user-images\image-20210416110122086.png" alt="image-20210416110122086"></p>
+<p><img src="C:\Users\10586\AppData\Roaming\Typora\typora-user-images\image-20210416110051728.png" alt="image-20210416110051728"></p>
+<h3 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2.修改配置文件"></a>2.修改配置文件</h3><h4 id="neutron-conf"><a href="#neutron-conf" class="headerlink" title="neutron.conf"></a>neutron.conf</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">###备份</span><br><span class="line">cp /etc/neutron/neutron.conf&#123;,.bak&#125;</span><br><span class="line">grep -Ev &#x27;^$|#&#x27; /etc/neutron/neutron.conf.bak &gt; /etc/neutron/neutron.conf</span><br><span class="line">vim /etc/neutron/neutron.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[DEFAULT]</span><br><span class="line">auth_strategy = keystone</span><br><span class="line">transport_url = rabbit://openstack:RABBIT_PASS@controller-hb07</span><br><span class="line"></span><br><span class="line">[keystone_authtoken]</span><br><span class="line">www_authenticate_uri = http://controller-hb07:5000</span><br><span class="line">auth_url = http://controller-hb07:5000</span><br><span class="line">memcached_servers = controller-hb07:11211</span><br><span class="line">auth_type = password</span><br><span class="line">project_domain_name = default</span><br><span class="line">user_domain_name = default</span><br><span class="line">project_name = service</span><br><span class="line">username = neutron</span><br><span class="line">password = NEUTRON_PASS</span><br><span class="line"></span><br><span class="line">[oslo_concurrency]</span><br><span class="line">lock_path = /var/lib/neutron/tmp</span><br></pre></td></tr></table></figure>
+
+<h4 id="linuxbridge-agent-ini"><a href="#linuxbridge-agent-ini" class="headerlink" title="linuxbridge_agent.ini"></a>linuxbridge_agent.ini</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">##备份</span><br><span class="line">cp /etc/neutron/plugins/ml2/linuxbridge_agent.ini&#123;,.bak&#125;</span><br><span class="line">grep -Ev &#x27;^$|#&#x27; /etc/neutron/plugins/ml2/linuxbridge_agent.ini.bak &gt; /etc/neutron/plugins/ml2/linuxbridge_agent.ini</span><br><span class="line">vim /etc/neutron/plugins/ml2/linuxbridge_agent.ini</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[linux_bridge]</span><br><span class="line">physical_interface_mappings = provider:eth2</span><br><span class="line"></span><br><span class="line">[vxlan]</span><br><span class="line">enable_vxlan = true</span><br><span class="line">local_ip = 192.168.107.32</span><br><span class="line">l2_population = true</span><br><span class="line"></span><br><span class="line">[securitygroup]</span><br><span class="line">enable_security_group = True</span><br><span class="line">firewall_driver = neutron.agent.linux.iptables_firewall.IptablesFirewallDriver</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysctl.conf</span><br><span class="line">##加入以下两行</span><br><span class="line">net.bridge.bridge-nf-call-iptables=1</span><br><span class="line">net.bridge.bridge-nf-call-ip6tables=1</span><br><span class="line">#保存退出输入以下语句</span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p</span><br></pre></td></tr></table></figure>
+
+<h4 id="nova-conf（加入neutron配置部分）"><a href="#nova-conf（加入neutron配置部分）" class="headerlink" title="nova.conf（加入neutron配置部分）"></a>nova.conf（加入neutron配置部分）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/nova/nova.conf </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[neutron]</span><br><span class="line">auth_url = http://controller-hb07:5000</span><br><span class="line">auth_type = password</span><br><span class="line">project_domain_name = default</span><br><span class="line">user_domain_name = default</span><br><span class="line">region_name = RegionOne</span><br><span class="line">project_name = service</span><br><span class="line">username = neutron</span><br><span class="line">password = NEUTRON_PASS</span><br><span class="line">##如果之后有问题，再加入，没有就不必了</span><br><span class="line">service_metadata_proxy = true</span><br><span class="line">metadata_proxy_shared_secret = METADATA_SECRET</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-完成安装并验证"><a href="#3-完成安装并验证" class="headerlink" title="3.完成安装并验证"></a>3.完成安装并验证</h3><h4 id="重启nova服务、启动Linuxbridge代理并配置它开机自启动"><a href="#重启nova服务、启动Linuxbridge代理并配置它开机自启动" class="headerlink" title="重启nova服务、启动Linuxbridge代理并配置它开机自启动"></a>重启nova服务、启动Linuxbridge代理并配置它开机自启动</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart openstack-nova-compute.service</span><br><span class="line">systemctl enable neutron-linuxbridge-agent.service</span><br><span class="line">systemctl start neutron-linuxbridge-agent.service</span><br></pre></td></tr></table></figure>
+
+<h4 id="验证neutron服务"><a href="#验证neutron服务" class="headerlink" title="验证neutron服务"></a>验证neutron服务</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">neutron agent-list</span><br><span class="line">openstack network agent list</span><br></pre></td></tr></table></figure>
+
+<p>如下图所示即为安装成功</p>
+<p><img src="C:\Users\10586\AppData\Roaming\Typora\typora-user-images\image-20210416113552308.png" alt="image-20210416113552308"></p>
+<hr>
+<hr>
 
                 
             </div>
@@ -600,7 +665,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Jth</a>
+                    <a href="/about" rel="external nofollow noreferrer">JJJth</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -610,7 +675,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://u1s1jth.github.io/2021/09/23/hello-world/">https://u1s1jth.github.io/2021/09/23/hello-world/</a>
+                    <a href="https://u1s1jth.github.io/2021/09/29/%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/">https://u1s1jth.github.io/2021/09/29/%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -623,7 +688,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Jth</a>
+                    <a href="/about" target="_blank">JJJth</a>
                     !
                 </span>
             </div>
@@ -647,7 +712,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Typora/">
+                                    <span class="chip bg-color">Typora</span>
+                                </a>
+                            
+                                <a href="/tags/Markdown/">
+                                    <span class="chip bg-color">Markdown</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -815,9 +888,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/09/29/%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/">
                     <div class="card-image">
@@ -835,9 +909,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -850,6 +924,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -869,7 +944,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2021/09/23/hello-world/">
@@ -899,7 +974,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
